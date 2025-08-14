@@ -31,6 +31,7 @@ COPY --from=build --chmod=0755 /app/entrypoint.sh /app/entrypoint.sh
 
 # This bit is needed only if you have code you _want_ to deploy in the container.
 # This is rare as you normally want your code to be able to get brought into a container later.
-COPY ./app /app/src
+# Uncomment the next line if you have application code to include:
+# COPY ./app /app/src
 
 ENTRYPOINT [ "/app/entrypoint.sh" ]
