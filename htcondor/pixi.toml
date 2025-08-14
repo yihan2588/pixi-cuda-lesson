@@ -1,0 +1,30 @@
+[workspace]
+authors = ["yihan2588 <167504939+yihan2588@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "htcondor"
+platforms = ["osx-arm64", "linux-64", "win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.10.18,<3.14"
+
+[feature.cpu.dependencies]
+pytorch-cpu = ">=2.7.1,<3"
+torchvision = ">=0.22.0,<0.23"
+
+[feature.gpu.system-requirements]
+cuda = "12"
+
+[feature.gpu.target.linux-64.dependencies]
+pytorch-gpu = ">=2.7.1,<3"
+torchvision = ">=0.22.0,<0.23"
+
+[feature.gpu.target.win-64.dependencies]
+pytorch-gpu = ">=2.7.1,<3"
+torchvision = ">=0.22.0,<0.23"
+
+[environments]
+cpu = ["cpu"]
+gpu = ["gpu"]
